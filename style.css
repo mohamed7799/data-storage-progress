@@ -161,6 +161,11 @@ progress::-moz-progress-bar {
 }
 
 @media screen and (max-width: 800px) {
+  body {
+    background-image: url("./img/bg-mobile.png");
+    background-position: center;
+    background-size: cover;
+  }
   .main-content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
