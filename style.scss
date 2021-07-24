@@ -1,0 +1,176 @@
+//variables
+
+$Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+$Pale-Blue: hsl(243, 100%, 93%);
+$Grayish-Blue: hsl(229, 7%, 55%);
+$Dark-Blue: hsl(228, 56%, 26%);
+$Very-Dark-Blue: hsl(229, 57%, 11%);
+
+//reset
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  min-height: 100vh;
+  background-color: $Very-Dark-Blue;
+  background-image: url("./img/bg-desktop.png");
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+  background-position: bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+//
+
+.main-content {
+  width: 60%;
+  display: flex;
+}
+
+.icon-side {
+  background-color: $Dark-Blue;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 2rem;
+  margin-right: 2rem;
+  flex: 1;
+}
+
+.logo {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.icon {
+  border-radius: 5px;
+  background-color: $Very-Dark-Blue;
+  padding: 1rem;
+  margin: 0.5rem;
+  height: 45px;
+  width: 50px;
+}
+
+.prograss-side {
+  position: relative;
+  background-color: $Dark-Blue;
+  border-radius: 5px;
+  flex: 2;
+  align-self: flex-end;
+  padding: 2rem;
+  color: $Pale-Blue;
+  & ul {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  & progress {
+    position: relative;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    border: 2px solid $Very-Dark-Blue;
+    height: 20px;
+    background-color: $Very-Dark-Blue;
+    border-radius: 30px;
+    overflow: hidden;
+  }
+}
+
+.GB-left {
+  position: relative;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  font-weight: bold;
+  font-size: 0.7rem;
+  color: $Grayish-Blue;
+  top: -40%;
+  padding: 1rem 2rem;
+  background-color: white;
+  border-radius: 5px;
+  border-bottom-right-radius: 0px;
+  right: 5%;
+  & span {
+    color: black;
+    font-size: 2.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.GB-left::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 0;
+  border-left: 20px solid transparent;
+  border-top: 20px solid white;
+}
+
+// for the whole progress bar (chrome)
+progress::-webkit-progress-bar {
+  background-color: $Very-Dark-Blue;
+}
+
+//for the bar itself (chrome)
+progress::-webkit-progress-value {
+  background-image: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  border-radius: 30px;
+}
+
+//for the bar itself (moz)
+progress::-moz-progress-bar {
+  background-image: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  border-radius: 30px;
+}
+
+@media screen and (max-width: 1100px) {
+  .main-content {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main-content {
+    flex-direction: column;
+  }
+  .prograss-side,
+  .icon-side {
+    width: 100%;
+  }
+  .icon-side {
+    margin-bottom: 2rem;
+  }
+
+  .GB-left::after {
+    border: none;
+  }
+
+  .GB-left {
+    top: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 50%;
+    padding: 1rem 0rem;
+    justify-content: center;
+  }
+}
